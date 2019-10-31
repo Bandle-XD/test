@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>鹿马智能酒店信息分析系统</title>
+    <style>
+        div.head{
+            height: 70px;
+            text-align: center;
+        }
+        span.title{
+            font-size: 32px;
+            font-weight: bold;
+        }
+        hr{
+            width: 80%;
+        }
+    </style>
+    <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js">
+    </script>
+    <script type="text/javascript">
+        // 单选按钮取消选中
+        $(function(){
+            $('input:radio').click(function(){
+                //alert(this.checked);
+                //
+
+                var domName = $(this).attr('name');
+
+                var $radio = $(this);
+                // if this was previously checked
+                if ($radio.data('waschecked') == true){
+                    $radio.prop('checked', false);
+                    $("input:radio[name='" + domName + "']").data('waschecked',false);
+                    //$radio.data('waschecked', false);
+                } else {
+                    $radio.prop('checked', true);
+                    $("input:radio[name='" + domName + "']").data('waschecked',false);
+                    $radio.data('waschecked', true);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div style="height: 40px"></div>
+    <div class="head">
+        <span class="title">鹿马智能酒店信息分析系统</span>
+        <hr>
+    </div>
+    <div>
+        <a href="/crawl">爬虫</a>
+    </div>
+    <div>
+        <a href="#">数据分析</a>
+    </div>
+    <div>
+        <a href="/record">爬取记录</a>
+    </div>
+    <div style="height: 40px"></div>
+    <form action="#" method="POST">
+        <div>
+            <span>分析功能选择</span>
+        </div>
+        <div>
+            <span>1.酒店整体评分时间序列分析</span>
+            <input type="radio" name="totalscore">
+        </div>
+        <div>
+            <span>2.酒店各项评分时间序列分析</span>
+            <input type="radio" name="eachscore">
+        </div>
+        <div>
+            <span>3.酒店好评词概况</span>
+            <input type="radio" name="wellcomment">
+        </div>
+        <div>
+            <span>4.酒店差评词概况</span>
+            <input type="radio" name="badcomment">
+        </div>
+        <div>
+            <span>5.问答关键词概况</span>
+            <input type="radio" name="answerword">
+        </div>
+        <div>
+            <span>6.入住时间序列分析</span>
+            <input type="radio" name="livetime">
+        </div>
+        <div>
+            <button type="submit">提交</button>
+        </div>
+    </form>
+
+
+</body>
+</html>

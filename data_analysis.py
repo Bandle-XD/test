@@ -367,9 +367,9 @@ def word_relate(all_words,keyword):
 def words_filter(keyword_count,keyword,direct):
     # 读取无价值词表
     if direct == 'pre':
-        dropwords=pd.read_csv(f"D:/Project/test/词语关联前向/{keyword}无价值词.txt",index_col=False,sep="\t",quoting=3,names=['dropwords'], encoding='utf-8')
+        dropwords=pd.read_csv(f"D:/Project/test/词语关联前向无价值词/{keyword}无价值词.txt",index_col=False,sep="\t",quoting=3,names=['dropwords'], encoding='utf-8')
     elif direct == 'back':
-        dropwords=pd.read_csv(f"D:/Project/test/词语关联后向/{keyword}无价值词.txt",index_col=False,sep="\t",quoting=3,names=['dropwords'], encoding='utf-8')
+        dropwords=pd.read_csv(f"D:/Project/test/词语关联后向无价值词/{keyword}无价值词.txt",index_col=False,sep="\t",quoting=3,names=['dropwords'], encoding='utf-8')
 
 
     # 无价值词转换为列表
@@ -416,6 +416,10 @@ def local_word_relate_parse(location,keyword,hotel):
     # 读取所有的酒店
     if hotel == '亚朵':
         sql = 'select hotel_name from hotel_list where hotel_name like "%%亚朵%%" or hotel_name like "%%drama%%"'
+
+    else:
+        print('该地区无该酒店')
+        return None
 
     df_hotel_name = pd.read_sql_query(sql,engine)
 
@@ -577,6 +581,6 @@ def trip_type_vision(hotel_name):
 if __name__ == '__main__':
     # trip_type_vision('上海外滩亚朵轻居酒店')
     # comment_score_vision('上海外滩亚朵轻居酒店')
-    # local_word_relate_parse('上海','服务','亚朵')
-    comment_cloud_parse(hotel_name='亚朵',location='上海',cloud_num=100,ranks=['C'])
+    local_word_relate_parse('上海','前台','亚朵')
+    # comment_cloud_parse(hotel_name='亚朵',location='上海',cloud_num=100,ranks=['all'])
     pass

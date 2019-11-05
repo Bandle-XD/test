@@ -49,6 +49,7 @@ from matplotlib.font_manager import FontProperties
 import matplotlib
 import pygal
 import numpy as np
+import os
 
 
 # 连接数据库
@@ -391,28 +392,39 @@ def words_filter(keyword_count,keyword,direct):
 
 
 '''
-词关联解析函数：读取，分词，去停用词，关联，统计，过滤无价值词
+词关联解析函数：读取，分词，去停用词，关联，统计前向关联词，过滤前向无价值词，后向词列表直接返回
 '''
-def word_relate_parse(hotel_name,keyword):
+def word_relate_parse(hotel_name,keyword,rank):
 
-    # 关键词前关联词解析
     comment_S_A,comment_S_B,comment_S_C = fenci(hotel_name)
-    all_words = drop_stopwords(comment_S_A)
+    if rank == 'A':
+        all_words = drop_stopwords(comment_S_A)
+    elif rank == 'B':
+        all_words = drop_stopwords(comment_S_B)
+    elif rank == 'C':
+        all_words = drop_stopwords(comment_S_C)
+    elif rank == 'all':
+        # 全部评论
+        comment_S_all = []
+
+        for comm_temp in [comment_S_A,comment_S_B,comment_S_C]:
+            for comm in comm_temp:
+                comment_S_all.append(comm)
+        
+        all_words = drop_stopwords(comment_S_all)
+
     pre_keyword,back_keyword = word_relate(all_words,keyword)
+    # 关键词前关联词解析
     pre_keyword_count = words_freq(pre_keyword)
-    pre_keyword_count = words_filter(pre_keyword_count,keyword,'pre')
+    # pre_keyword_count = words_filter(pre_keyword_count,keyword,'pre')
 
-    # 关键词后关联词解析
-    back_keyword_count = words_freq(back_keyword)
-    back_keyword_count = words_filter(back_keyword_count,keyword,'back')
-
-    return pre_keyword_count,back_keyword_count
+    return pre_keyword_count,back_keyword
 
 
 '''
-区域词关联函数：统计某个区域酒店的高频前后向关联词
+区域词关联函数：统计某个区域酒店的高频前向关联词和所有的后向关联词
 '''
-def local_word_relate_parse(location,keyword,hotel):
+def local_word_relate_parse(location,keyword,hotel,rank):
     # 读取所有的酒店
     if hotel == '亚朵':
         sql = 'select hotel_name from hotel_list where hotel_name like "%%亚朵%%" or hotel_name like "%%drama%%"'
@@ -423,25 +435,34 @@ def local_word_relate_parse(location,keyword,hotel):
 
     df_hotel_name = pd.read_sql_query(sql,engine)
 
-    # 创建空的前后向关联词DataFrame，后续直接append
+    # 创建空的前向关联词DataFrame，后续直接append
     pre_keyword = pd.DataFrame({'all_words':[]})
-    back_keyword = pd.DataFrame({'all_words':[]})
+    back_keyword = []
 
 
-    # 所有酒店的统计，每个酒店取前十个高频词
+    # 所有酒店的统计，每个酒店取前十个前向高频词和所有的后向关联词
     for hotel in df_hotel_name.iloc[:,0]:
-        keyword_count = word_relate_parse(hotel,keyword)
-        pre_keyword = pre_keyword.append(keyword_count[0].iloc[:10])
-        back_keyword = back_keyword.append(keyword_count[1].iloc[:10])
+        keyword_count = word_relate_parse(hotel,keyword,rank)
+        pre_keyword = pre_keyword.append(keyword_count[0].iloc[:10],sort=False)
+        for word in keyword_count[1]:
+            back_keyword.append(word)
     
+    back_keyword = pd.DataFrame({'all_words':back_keyword})
     # 转换为列表传入words_freq()
     pre_keyword_count = words_freq(pre_keyword.all_words.values.tolist())
     back_keyword_count = words_freq(back_keyword.all_words.values.tolist())
 
+    # 检查文件夹是否存在，不存在则创建
+    if os.path.exists(f'D:/Project/test/{location}/{keyword}'):
+        pass
+    else:
+        os.mkdir(f'D:/Project/test/{location}/{keyword}')
+
     # 存储数据
     pre_keyword_count.iloc[:20].to_csv(f'D:/Project/test/{location}/{keyword}/pre_keyword_count.csv',index=False,header=False)
-    back_keyword_count.iloc[:20].to_csv(f'D:/Project/test/{location}/{keyword}/back_keyword_count.csv',index=False,header=False)
+    back_keyword_count.to_csv(f'D:/Project/test/{location}/{keyword}/back_keyword_count.csv',index=False,header=False)
 
+    return None
 
 
 
@@ -459,6 +480,7 @@ def score_rank(df_total):
     df_3 = df_total[(df_total['total_score'] >= 3) & (df_total['total_score'] < 4)] # 3分
     df_2 = df_total[(df_total['total_score'] >= 2) & (df_total['total_score'] < 3)] # 2分
     df_1 = df_total[df_total['total_score'] < 2] # 1分
+
     return df_5,df_4,df_3,df_2,df_1
 
 
@@ -511,6 +533,7 @@ def comment_score_vision(hotel_name):
     plt.savefig(f'D:/Project/test/static/评分占比.png',quality=95)
     # plt.show()
 
+    return None
 
 
 
@@ -581,6 +604,6 @@ def trip_type_vision(hotel_name):
 if __name__ == '__main__':
     # trip_type_vision('上海外滩亚朵轻居酒店')
     # comment_score_vision('上海外滩亚朵轻居酒店')
-    local_word_relate_parse('上海','前台','亚朵')
+    local_word_relate_parse('上海','前台服务员','亚朵','all')
     # comment_cloud_parse(hotel_name='亚朵',location='上海',cloud_num=100,ranks=['all'])
     pass

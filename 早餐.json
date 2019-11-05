@@ -1,0 +1,360 @@
+[
+    [
+        {
+            "name":"早餐",
+            "symbolSize":50,
+            "draggable": "False",
+            "value":0,
+            "category": "keyword"
+        },
+        {
+            "name":"酒店",
+            "symbolSize":40,
+            "draggable": "False",
+            "value":0,
+            "category": "pre"
+        },
+        {
+            "name":"不错：1047/30.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"好：915/26,2%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"好吃：745/21.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"丰盛：488/13.9%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"品种",
+            "symbolSize":40,
+            "draggable": "False",
+            "value":0,
+            "category": "back"
+        },
+        {
+            "name":"很棒：262/7.5%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"味道",
+            "symbolSize":40,
+            "draggable": "False",
+            "value":0,
+            "category": "back"
+        },
+        {
+            "name":"服务",
+            "symbolSize":40,
+            "draggable": "False",
+            "value":0,
+            "category": "back"
+        },
+        {
+            "name":"一般般：16/0.4%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negtive"
+        },
+        {
+            "name":"差：7/0.2%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negtive"
+        },
+        {
+            "name":"贵：6/0.2%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negtive"
+        },
+        {
+            "name":"糟糕：2/0.05%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negtive"
+        },
+        {
+            "name":"丰富：90/68.7%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"丰盛：7/5.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"齐全：7/5.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"少：13/9.9%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negtive"
+        },
+        {
+            "name":"不多：11/8.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negtive"
+        },
+        {
+            "name":"极少：2/1.5%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negtive"
+        },
+        {
+            "name":"略少：1/0.7%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negtive"
+        },
+        {
+            "name":"不错：16/48.4%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"好：12/36.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"很棒：3/9.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"凑活：1/3.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negtive"
+        },
+        {
+            "name":"好极了：1/3.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"好：3/37.5%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"到位：2/25.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"不错：1/12.5%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"贴心：1/12.5%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"满意：1/12.5%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        }
+    ],
+    [
+        {
+            "source":"酒店",
+            "target":"早餐"
+        },
+        {
+            "source":"早餐",
+            "target":"不错：1047/30.0%"
+        },
+        {
+            "source":"早餐",
+            "target":"好：915/26,2%"
+        },
+        {
+            "source":"早餐",
+            "target":"好吃：745/21.3%"
+        },
+        {
+            "source":"早餐",
+            "target":"丰盛：488/13.9%"
+        },
+        {
+            "source":"早餐",
+            "target":"品种"
+        },
+        {
+            "source":"早餐",
+            "target":"很棒：262/7.5%"
+        },
+        {
+            "source":"早餐",
+            "target":"味道"
+        },
+        {
+            "source":"早餐",
+            "target":"服务"
+        },
+        {
+            "source":"早餐",
+            "target":"一般般：16/0.4%"
+        },
+        {
+            "source":"早餐",
+            "target":"差：7/0.2%"
+        },
+        {
+            "source":"早餐",
+            "target":"贵：6/0.2%"
+        },
+        {
+            "source":"早餐",
+            "target":"糟糕：2/0.05%"
+        },
+        {
+            "source":"品种",
+            "target":"丰富：90/68.7%"
+        },
+        {
+            "source":"品种",
+            "target":"丰盛：7/5.3%"
+        },
+        {
+            "source":"品种",
+            "target":"齐全：7/5.3%"
+        },
+        {
+            "source":"品种",
+            "target":"少：13/9.9%"
+        },
+        {
+            "source":"品种",
+            "target":"不多：11/8.3%"
+        },
+        {
+            "source":"品种",
+            "target":"极少：2/1.5%"
+        },
+        {
+            "source":"品种",
+            "target":"略少：1/0.7%"
+        },
+        {
+            "source":"味道",
+            "target":"不错：16/48.4%"
+        },
+        {
+            "source":"味道",
+            "target":"好：12/36.3%"
+        },
+        {
+            "source":"味道",
+            "target":"很棒：3/9.0%"
+        },
+        {
+            "source":"味道",
+            "target":"凑活：1/3.0%"
+        },
+        {
+            "source":"味道",
+            "target":"好极了：1/3.0%"
+        },
+        {
+            "source":"服务",
+            "target":"好：3/37.5%"
+        },
+        {
+            "source":"服务",
+            "target":"到位：2/25.0%"
+        },
+        {
+            "source":"服务",
+            "target":"不错：1/12.5%"
+        },
+        {
+            "source":"服务",
+            "target":"贴心：1/12.5%"
+        },
+        {
+            "source":"服务",
+            "target":"满意：1/12.5%"
+        }
+    ],
+    [
+        {
+            "name":"keyword"
+        },
+        {
+            "name":"pre"
+        },
+        {
+            "name":"back"
+        },
+        {
+            "name":"active"
+        },
+        {
+            "name":"negtive"
+        }
+    ]
+]

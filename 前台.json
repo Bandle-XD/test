@@ -1,0 +1,305 @@
+[
+    [
+        {
+            "name":"前台",
+            "symbolSize":50,
+            "draggable": "False",
+            "value":0,
+            "category": "keyword"
+        },
+        {
+            "name":"酒店",
+            "symbolSize":40,
+            "draggable": "False",
+            "value":0,
+            "category": "pre"
+        },
+        {
+            "name":"服务",
+            "symbolSize":40,
+            "draggable": "False",
+            "value":0,
+            "category": "back"
+        },
+        {
+            "name":"服务员",
+            "symbolSize":40,
+            "draggable": "False",
+            "value":0,
+            "category": "back"
+        },
+        {
+            "name":"态度",
+            "symbolSize":40,
+            "draggable": "False",
+            "value":0,
+            "category": "back"
+        },
+        {
+            "name":"好：383/61.8%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"热情：154/24.8%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"周到：33/5.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"贴心：27/4.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"耐心：18/2.9%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"差：2/0.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negtive"
+        },
+        {
+            "name":"一般般：1/0.1%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negtive"
+        },
+        {
+            "name":"不太好：1/0.1%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negtive"
+        },
+        {
+            "name":"极差：1/0.1%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negtive"
+        },
+        {
+            "name":"好：30/76.9%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"不错：4/10.2%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"热情：2/5.1%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"nice：1/2.5%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"冷淡：1/2.5%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negtive"
+        },
+        {
+            "name":"友善：1/2.5%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"热情：25/56.8%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"礼貌：7/15.9%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"贴心：5/11.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"热情周到：3/6.8%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"很漂亮：2/4.5%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"微笑：2/4.5%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        }
+    ],
+    [
+        {
+            "source":"酒店",
+            "target":"前台"
+        },
+        {
+            "source":"前台",
+            "target":"服务"
+        },
+        {
+            "source":"前台",
+            "target":"服务员"
+        },
+        {
+            "source":"前台",
+            "target":"态度"
+        },
+        {
+            "source":"服务",
+            "target":"好：383/61.8%"
+        },
+        {
+            "source":"服务",
+            "target":"热情：154/24.8%"
+        },
+        {
+            "source":"服务",
+            "target":"周到：33/5.3%"
+        },
+        {
+            "source":"服务",
+            "target":"贴心：27/4.3%"
+        },
+        {
+            "source":"服务",
+            "target":"耐心：18/2.9%"
+        },
+        {
+            "source":"服务",
+            "target":"差：2/0.3%"
+        },
+        {
+            "source":"服务",
+            "target":"一般般：1/0.1%"
+        },
+        {
+            "source":"服务",
+            "target":"不太好：1/0.1%"
+        },
+        {
+            "source":"服务",
+            "target":"极差：1/0.1%"
+        },
+        {
+            "source":"态度",
+            "target":"好：30/76.9%"
+        },
+        {
+            "source":"态度",
+            "target":"不错：4/10.2%"
+        },
+        {
+            "source":"态度",
+            "target":"热情：2/5.1%"
+        },
+        {
+            "source":"态度",
+            "target":"nice：1/2.5%"
+        },
+        {
+            "source":"态度",
+            "target":"冷淡：1/2.5%"
+        },
+        {
+            "source":"态度",
+            "target":"友善：1/2.5%"
+        },
+        {
+            "source":"服务员",
+            "target":"热情：25/56.8%"
+        },
+        {
+            "source":"服务员",
+            "target":"礼貌：7/15.9%"
+        },
+        {
+            "source":"服务员",
+            "target":"贴心：5/11.3%"
+        },
+        {
+            "source":"服务员",
+            "target":"热情周到：3/6.8%"
+        },
+        {
+            "source":"服务员",
+            "target":"很漂亮：2/4.5%"
+        },
+        {
+            "source":"服务员",
+            "target":"微笑：2/4.5%"
+        }
+    ],
+    [
+        {
+            "name":"keyword"
+        },
+        {
+            "name":"pre"
+        },
+        {
+            "name":"back"
+        },
+        {
+            "name":"active"
+        },
+        {
+            "name":"negtive"
+        }
+    ]
+]

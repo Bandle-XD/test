@@ -8,13 +8,6 @@
             "category": "keyword"
         },
         {
-            "name":"酒店",
-            "symbolSize":40,
-            "draggable": "False",
-            "value":0,
-            "category": "pre"
-        },
-        {
             "name":"服务",
             "symbolSize":40,
             "draggable": "False",
@@ -75,28 +68,28 @@
             "symbolSize":30,
             "draggable": "False",
             "value":0,
-            "category": "negtive"
+            "category": "negative"
         },
         {
             "name":"一般般：1/0.1%",
             "symbolSize":30,
             "draggable": "False",
             "value":0,
-            "category": "negtive"
+            "category": "negative"
         },
         {
             "name":"不太好：1/0.1%",
             "symbolSize":30,
             "draggable": "False",
             "value":0,
-            "category": "negtive"
+            "category": "negative"
         },
         {
             "name":"极差：1/0.1%",
             "symbolSize":30,
             "draggable": "False",
             "value":0,
-            "category": "negtive"
+            "category": "negative"
         },
         {
             "name":"好：30/76.9%",
@@ -131,7 +124,7 @@
             "symbolSize":30,
             "draggable": "False",
             "value":0,
-            "category": "negtive"
+            "category": "negative"
         },
         {
             "name":"友善：1/2.5%",
@@ -184,10 +177,6 @@
         }
     ],
     [
-        {
-            "source":"酒店",
-            "target":"前台"
-        },
         {
             "source":"前台",
             "target":"服务"
@@ -290,16 +279,13 @@
             "name":"keyword"
         },
         {
-            "name":"pre"
-        },
-        {
             "name":"back"
         },
         {
-            "name":"active"
+            "name":"negative"
         },
         {
-            "name":"negtive"
+            "name":"active"
         }
     ]
 ]

@@ -40,5 +40,6 @@ def graph_vision(location,keyword):
     )
     return c
 
-graph_vision('上海','前台').render('D:/Project/test/static/前台.html')
+# graph_vision('上海','前台').render('D:/Project/test/static/前台.html')
 # graph_vision('上海','早餐').render('D:/Project/test/static/早餐.html')
+graph_vision('上海','房间').render('D:/Project/test/static/房间.html')

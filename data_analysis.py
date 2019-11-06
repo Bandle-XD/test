@@ -604,6 +604,6 @@ def trip_type_vision(hotel_name):
 if __name__ == '__main__':
     # trip_type_vision('上海外滩亚朵轻居酒店')
     # comment_score_vision('上海外滩亚朵轻居酒店')
-    local_word_relate_parse('上海','前台服务员','亚朵','all')
+    local_word_relate_parse('上海','房间隔音','亚朵','all')
     # comment_cloud_parse(hotel_name='亚朵',location='上海',cloud_num=100,ranks=['all'])
     pass

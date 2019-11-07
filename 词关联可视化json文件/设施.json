@@ -1,0 +1,280 @@
+[
+    [
+        {
+            "name":"设施",
+            "symbolSize":50,
+            "draggable": "False",
+            "value":0,
+            "category": "keyword"
+        },
+        {
+            "name":"设备",
+            "symbolSize":40,
+            "draggable": "False",
+            "value":0,
+            "category": "back"
+        },
+        {
+            "name":"齐全：712/34.6%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"好：598/29.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"新：353/17.1%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"不错：256/12.4%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"完善：70/3.4%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"干净：25/1.2%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"人性化：19/0.92%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"旧：5/0.24%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"陈旧：5/0.24%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"一般般：3/0.14%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"比较简单：3/0.14%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"简陋：2/0.09%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"不行：2/0.09%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"不好：2/0.09%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"老化：1/0.04%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"好：6/42.8%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"还行：2/14.2%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"先进：2/14.2%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"超新：1/7.1%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"干净：1/7.1%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"美中不足：1/7.1%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"损坏：1/7.1%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        }
+    ],
+    [
+        {
+            "source":"设施",
+            "target":"设备"
+        },
+        {
+            "source":"设施",
+            "target":"齐全：712/34.6%"
+        },
+        {
+            "source":"设施",
+            "target":"好：598/29.0%"
+        },
+        {
+            "source":"设施",
+            "target":"新：353/17.1%"
+        },
+        {
+            "source":"设施",
+            "target":"不错：256/12.4%"
+        },
+        {
+            "source":"设施",
+            "target":"完善：70/3.4%"
+        },
+        {
+            "source":"设施",
+            "target":"干净：25/1.2%"
+        },
+        {
+            "source":"设施",
+            "target":"人性化：19/0.92%"
+        },
+        {
+            "source":"设施",
+            "target":"旧：5/0.24%"
+        },
+        {
+            "source":"设施",
+            "target":"陈旧：5/0.24%"
+        },
+        {
+            "source":"设施",
+            "target":"一般般：3/0.14%"
+        },
+        {
+            "source":"设施",
+            "target":"比较简单：3/0.14%"
+        },
+        {
+            "source":"设施",
+            "target":"简陋：2/0.09%"
+        },
+        {
+            "source":"设施",
+            "target":"不行：2/0.09%"
+        },
+        {
+            "source":"设施",
+            "target":"不好：2/0.09%"
+        },
+        {
+            "source":"设施",
+            "target":"老化：1/0.04%"
+        },
+        {
+            "source":"设备",
+            "target":"好：6/42.8%"
+        },
+        {
+            "source":"设备",
+            "target":"还行：2/14.2%"
+        },
+        {
+            "source":"设备",
+            "target":"先进：2/14.2%"
+        },
+        {
+            "source":"设备",
+            "target":"超新：1/7.1%"
+        },
+        {
+            "source":"设备",
+            "target":"干净：1/7.1%"
+        },
+        {
+            "source":"设备",
+            "target":"美中不足：1/7.1%"
+        },
+        {
+            "source":"设备",
+            "target":"损坏：1/7.1%"
+        }
+    ],
+    [
+        {
+            "name":"keyword"
+        },
+        {
+            "name":"back"
+        },
+        {
+            "name":"negative"
+        },
+        {
+            "name":"active"
+        }
+    ]
+]

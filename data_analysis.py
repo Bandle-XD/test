@@ -453,14 +453,14 @@ def local_word_relate_parse(location,keyword,hotel,rank):
     back_keyword_count = words_freq(back_keyword.all_words.values.tolist())
 
     # 检查文件夹是否存在，不存在则创建
-    if os.path.exists(f'D:/Project/test/{location}/{keyword}'):
+    if os.path.exists(f'D:/Project/test/关联词/{location}/{keyword}'):
         pass
     else:
-        os.mkdir(f'D:/Project/test/{location}/{keyword}')
+        os.mkdir(f'D:/Project/test/关联词/{location}/{keyword}')
 
     # 存储数据
-    pre_keyword_count.iloc[:20].to_csv(f'D:/Project/test/{location}/{keyword}/pre_keyword_count.csv',index=False,header=False)
-    back_keyword_count.to_csv(f'D:/Project/test/{location}/{keyword}/back_keyword_count.csv',index=False,header=False)
+    pre_keyword_count.iloc[:20].to_csv(f'D:/Project/test/关联词/{location}/{keyword}/pre_keyword_count.csv',index=False,header=False)
+    back_keyword_count.to_csv(f'D:/Project/test/关联词/{location}/{keyword}/back_keyword_count.csv',index=False,header=False)
 
     return None
 
@@ -604,6 +604,8 @@ def trip_type_vision(hotel_name):
 if __name__ == '__main__':
     # trip_type_vision('上海外滩亚朵轻居酒店')
     # comment_score_vision('上海外滩亚朵轻居酒店')
-    local_word_relate_parse('上海','房间隔音','亚朵','all')
+    local_word_relate_parse('上海','性价比','亚朵','all')
     # comment_cloud_parse(hotel_name='亚朵',location='上海',cloud_num=100,ranks=['all'])
     pass
+    a = ''
+    b = ''

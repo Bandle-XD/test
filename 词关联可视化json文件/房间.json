@@ -237,6 +237,83 @@
             "draggable": "False",
             "value":0,
             "category": "negative"
+        },
+        {
+            "name":"简约：3/30.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"喜欢：2/20.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"好：2/20.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"清新：2/20.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"简洁：1/10.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"好：4/21.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"不错：4/21.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"不好：4/21.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"不太好：3/15.7%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"一般般：2/10.5%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"欠佳：2/10.5%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
         }
     ],
     [
@@ -372,6 +449,54 @@
         {
             "source":"隔音",
             "target":"太差：1/4.1%"
+        },
+        {
+            "source":"隔音",
+            "target":"太差：1/4.1%"
+        },
+        {
+            "source":"风格",
+            "target":"简约：3/30.0%"
+        },
+        {
+            "source":"风格",
+            "target":"喜欢：2/20.0%"
+        },
+        {
+            "source":"风格",
+            "target":"好：2/20.0%"
+        },
+        {
+            "source":"风格",
+            "target":"清新：2/20.0%"
+        },
+        {
+            "source":"风格",
+            "target":"简洁：1/10.0%"
+        },
+        {
+            "source":"效果",
+            "target":"好：4/21.0%"
+        },
+        {
+            "source":"效果",
+            "target":"不错：4/21.0%"
+        },
+        {
+            "source":"效果",
+            "target":"不好：4/21.0%"
+        },
+        {
+            "source":"效果",
+            "target":"不太好：3/15.7%"
+        },
+        {
+            "source":"效果",
+            "target":"一般般：2/10.5%"
+        },
+        {
+            "source":"效果",
+            "target":"欠佳：2/10.5%"
         }
 
     ],

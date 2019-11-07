@@ -23,7 +23,7 @@ import os
 '''
 def graph_vision(location,keyword):
 
-    with open(f'D:/Project/test/{keyword}.json','r',encoding='utf-8') as f:
+    with open(f'D:/Project/test/词关联可视化json文件/{keyword}.json','r',encoding='utf-8') as f:
         j = json.load(f)
         nodes, links, categories = j
 
@@ -42,4 +42,6 @@ def graph_vision(location,keyword):
 
 # graph_vision('上海','前台').render('D:/Project/test/static/前台.html')
 # graph_vision('上海','早餐').render('D:/Project/test/static/早餐.html')
-graph_vision('上海','房间').render('D:/Project/test/static/房间.html')
+# graph_vision('上海','房间').render('D:/Project/test/static/房间.html')
+# graph_vision('上海','设施').render('D:/Project/test/static/设施.html')
+graph_vision('上海','价格').render('D:/Project/test/static/价格.html')

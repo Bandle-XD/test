@@ -1,0 +1,258 @@
+[
+    [
+        {
+            "name":"价格",
+            "symbolSize":50,
+            "draggable": "False",
+            "value":0,
+            "category": "keyword"
+        },
+        {
+            "name":"性价比",
+            "symbolSize":40,
+            "draggable": "False",
+            "value":0,
+            "category": "back"
+        },
+        {
+            "name":"实惠：81/17.7%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"便宜：51/11.1%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"合适：44/9.6%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"优惠：24/5.2%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"适中：22/4.8%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"不贵：20/4.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"亲民：10/2.1%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"不错：9/1.9%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"公道：7/1.5%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"划算：6/1.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"满意：4/0.8%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"贵：49/10.7%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"高：46/10.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"小贵：27/5.9%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"偏高：24/5.2%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"偏贵：14/3.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"略贵：7/1.5%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"太高：4/0.8%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"太贵：4/0.8%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"稍贵：4/0.8%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        }
+    ],
+    [
+        {
+            "source":"价格",
+            "target":"性价比"
+        },
+        {
+            "source":"价格",
+            "target":"实惠：81/17.7%"
+        },
+        {
+            "source":"价格",
+            "target":"便宜：51/11.1%"
+        },
+        {
+            "source":"价格",
+            "target":"合适：44/9.6%"
+        },
+        {
+            "source":"价格",
+            "target":"优惠：24/5.2%"
+        },
+        {
+            "source":"价格",
+            "target":"适中：22/4.8%"
+        },
+        {
+            "source":"价格",
+            "target":"不贵：20/4.3%"
+        },
+        {
+            "source":"价格",
+            "target":"亲民：10/2.1%"
+        },
+        {
+            "source":"价格",
+            "target":"不错：9/1.9%"
+        },
+        {
+            "source":"价格",
+            "target":"公道：7/1.5%"
+        },
+        {
+            "source":"价格",
+            "target":"划算：6/1.3%"
+        },
+        {
+            "source":"价格",
+            "target":"满意：4/0.8%"
+        },
+        {
+            "source":"价格",
+            "target":"贵：49/10.7%"
+        },
+        {
+            "source":"价格",
+            "target":"高：46/10.0%"
+        },
+        {
+            "source":"价格",
+            "target":"小贵：27/5.9%"
+        },
+        {
+            "source":"价格",
+            "target":"偏高：24/5.2%"
+        },
+        {
+            "source":"价格",
+            "target":"偏贵：14/3.0%"
+        },
+        {
+            "source":"价格",
+            "target":"略贵：7/1.5%"
+        },
+        {
+            "source":"价格",
+            "target":"太高：4/0.8%"
+        },
+        {
+            "source":"价格",
+            "target":"太贵：4/0.8%"
+        },
+        {
+            "source":"价格",
+            "target":"稍贵：4/0.8%"
+        }
+    ],
+    [
+        {
+            "name":"keyword"
+        },
+        {
+            "name":"back"
+        },
+        {
+            "name":"negative"
+        },
+        {
+            "name":"active"
+        }
+    ]
+]

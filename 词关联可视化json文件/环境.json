@@ -1,0 +1,214 @@
+[
+    [
+        {
+            "name":"环境",
+            "symbolSize":50,
+            "draggable": "False",
+            "value":0,
+            "category": "keyword"
+        },
+        {
+            "name":"好：1442/47.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"不错：1017/33.2%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"优雅：130/4.2%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"干净：125/4.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"舒适：91/2.9%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"安静：73/2.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"很棒：61/1.9%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"整洁：36/1.1%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"舒服：32/1.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"温馨：25/0.8%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"差：10/0.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"不好：5/0.1%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"一般般：4/0.1%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"很小：4/0.1%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"不太好：3/0.09%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"嘈杂：3/0.09%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"吵闹：2/0.06%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        }
+    ],
+    [
+        {
+            "source":"环境",
+            "target":"好：1442/47.0%"
+        },
+        {
+            "source":"环境",
+            "target":"不错：1017/33.2%"
+        },
+        {
+            "source":"环境",
+            "target":"优雅：130/4.2%"
+        },
+        {
+            "source":"环境",
+            "target":"干净：125/4.0%"
+        },
+        {
+            "source":"环境",
+            "target":"舒适：91/2.9%"
+        },
+        {
+            "source":"环境",
+            "target":"安静：73/2.3%"
+        },
+        {
+            "source":"环境",
+            "target":"很棒：61/1.9%"
+        },
+        {
+            "source":"环境",
+            "target":"整洁：36/1.1%"
+        },
+        {
+            "source":"环境",
+            "target":"舒服：32/1.0%"
+        },
+        {
+            "source":"环境",
+            "target":"温馨：25/0.8%"
+        },
+        {
+            "source":"环境",
+            "target":"差：10/0.3%"
+        },
+        {
+            "source":"环境",
+            "target":"不好：5/0.1%"
+        },
+        {
+            "source":"环境",
+            "target":"一般般：4/0.1%"
+        },
+        {
+            "source":"环境",
+            "target":"很小：4/0.1%"
+        },
+        {
+            "source":"环境",
+            "target":"不太好：3/0.09%"
+        },
+        {
+            "source":"环境",
+            "target":"嘈杂：3/0.09%"
+        },
+        {
+            "source":"环境",
+            "target":"吵闹：2/0.06%"
+        }
+    ],
+    [
+        {
+            "name":"keyword"
+        },
+        {
+            "name":"back"
+        },
+        {
+            "name":"negative"
+        },
+        {
+            "name":"active"
+        }
+    ]
+]

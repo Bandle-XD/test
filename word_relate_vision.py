@@ -45,4 +45,6 @@ def graph_vision(location,keyword):
 # graph_vision('上海','房间').render('D:/Project/test/static/房间.html')
 # graph_vision('上海','设施').render('D:/Project/test/static/设施.html')
 # graph_vision('上海','价格').render('D:/Project/test/static/价格.html')
-graph_vision('上海','环境').render('D:/Project/test/static/环境.html')
+# graph_vision('上海','环境').render('D:/Project/test/static/环境.html')
+# graph_vision('上海','位置').render('D:/Project/test/static/位置.html')
+graph_vision('上海','入住').render('D:/Project/test/static/入住.html')

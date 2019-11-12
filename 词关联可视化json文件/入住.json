@@ -1,0 +1,269 @@
+[
+    [
+        {
+            "name":"入住",
+            "symbolSize":50,
+            "draggable": "False",
+            "value":0,
+            "category": "keyword"
+        },
+        {
+            "name":"体验",
+            "symbolSize":40,
+            "draggable": "False",
+            "value":0,
+            "category": "back"
+        },
+        {
+            "name":"服务",
+            "symbolSize":40,
+            "draggable": "False",
+            "value":0,
+            "category": "back"
+        },
+        {
+            "name":"不错：55/39.8%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"满意：46/33.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"很快：25/18.1%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"愉快：12/8.6%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"好：4/28.5%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"热情：3/21.4%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"不错：2/14.2%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"周到：2/14.2%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"贴心：2/14.2%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"很棒：1/7.1%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"好：35/46.6%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"不错：25/33.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"很棒：6/8.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"极佳：2/2.6%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"超赞：1/1.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"满意：1/1.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"完美：1/1.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"不好：2/2.6%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"很差：1/1.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"差：1/1.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        }
+    ],
+    [
+        {
+            "source":"入住",
+            "target":"服务"
+        },
+        {
+            "source":"入住",
+            "target":"体验"
+        },
+        {
+            "source":"入住",
+            "target":"不错：55/39.8%"
+        },
+        {
+            "source":"入住",
+            "target":"满意：46/33.3%"
+        },
+        {
+            "source":"入住",
+            "target":"很快：25/18.1%"
+        },
+        {
+            "source":"入住",
+            "target":"愉快：12/8.6%"
+        },
+        {
+            "source":"服务",
+            "target":"好：4/28.5%"
+        },
+        {
+            "source":"服务",
+            "target":"热情：3/21.4%"
+        },
+        {
+            "source":"服务",
+            "target":"不错：2/14.2%"
+        },
+        {
+            "source":"服务",
+            "target":"周到：2/14.2%"
+        },
+        {
+            "source":"服务",
+            "target":"贴心：2/14.2%"
+        },
+        {
+            "source":"服务",
+            "target":"很棒：1/7.1%"
+        },
+        {
+            "source":"体验",
+            "target":"好：35/46.6%"
+        },
+        {
+            "source":"体验",
+            "target":"不错：25/33.3%"
+        },
+        {
+            "source":"体验",
+            "target":"很棒：6/8.0%"
+        },
+        {
+            "source":"体验",
+            "target":"极佳：2/2.6%"
+        },
+        {
+            "source":"体验",
+            "target":"超赞：1/1.3%"
+        },
+        {
+            "source":"体验",
+            "target":"满意：1/1.3%"
+        },
+        {
+            "source":"体验",
+            "target":"完美：1/1.3%"
+        },
+        {
+            "source":"体验",
+            "target":"不好：2/2.6%"
+        },
+        {
+            "source":"体验",
+            "target":"很差：1/1.3%"
+        },
+        {
+            "source":"体验",
+            "target":"差：1/1.3%"
+        }
+    ],
+    [
+        {
+            "name":"keyword"
+        },
+        {
+            "name":"back"
+        },
+        {
+            "name":"negative"
+        },
+        {
+            "name":"active"
+        }
+    ]
+]

@@ -92,49 +92,105 @@
             "category": "negative"
         },
         {
-            "name":"丰富：90/68.7%",
+            "name":"丰富：90/60.8%",
             "symbolSize":30,
             "draggable": "False",
             "value":0,
             "category": "active"
         },
         {
-            "name":"丰盛：7/5.3%",
+            "name":"丰盛：7/4.7%",
             "symbolSize":30,
             "draggable": "False",
             "value":0,
             "category": "active"
         },
         {
-            "name":"齐全：7/5.3%",
+            "name":"齐全：7/4.7%",
             "symbolSize":30,
             "draggable": "False",
             "value":0,
             "category": "active"
         },
         {
-            "name":"少：13/9.9%",
+            "name":"满意：3/2.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"不错：3/2.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"多样：2/1.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"很全：2/1.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"足够：2/1.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"少：13/8.7%",
             "symbolSize":30,
             "draggable": "False",
             "value":0,
             "category": "negative"
         },
         {
-            "name":"不多：11/8.3%",
+            "name":"不多：11/7.4%",
             "symbolSize":30,
             "draggable": "False",
             "value":0,
             "category": "negative"
         },
         {
-            "name":"极少：2/1.5%",
+            "name":"虽不多：2/1.3%",
             "symbolSize":30,
             "draggable": "False",
             "value":0,
             "category": "negative"
         },
         {
-            "name":"略少：1/0.7%",
+            "name":"极少：2/1.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"单调：2/1.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"略少：1/0.6%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"较少：1/0.6%",
             "symbolSize":30,
             "draggable": "False",
             "value":0,
@@ -262,31 +318,63 @@
         },
         {
             "source":"品种",
-            "target":"丰富：90/68.7%"
+            "target":"丰富：90/60.8%"
         },
         {
             "source":"品种",
-            "target":"丰盛：7/5.3%"
+            "target":"丰盛：7/4.7%"
         },
         {
             "source":"品种",
-            "target":"齐全：7/5.3%"
+            "target":"齐全：7/4.7%"
         },
         {
             "source":"品种",
-            "target":"少：13/9.9%"
+            "target":"满意：3/2.0%"
         },
         {
             "source":"品种",
-            "target":"不多：11/8.3%"
+            "target":"不错：3/2.0%"
         },
         {
             "source":"品种",
-            "target":"极少：2/1.5%"
+            "target":"多样：2/1.3%"
         },
         {
             "source":"品种",
-            "target":"略少：1/0.7%"
+            "target":"很全：2/1.3%"
+        },
+        {
+            "source":"品种",
+            "target":"足够：2/1.3%"
+        },
+        {
+            "source":"品种",
+            "target":"少：13/8.7%"
+        },
+        {
+            "source":"品种",
+            "target":"不多：11/7.4%"
+        },
+        {
+            "source":"品种",
+            "target":"虽不多：2/1.3%"
+        },
+        {
+            "source":"品种",
+            "target":"极少：2/1.3%"
+        },
+        {
+            "source":"品种",
+            "target":"单调：2/1.3%"
+        },
+        {
+            "source":"品种",
+            "target":"略少：1/0.6%"
+        },
+        {
+            "source":"品种",
+            "target":"较少：1/0.6%"
         },
         {
             "source":"味道",

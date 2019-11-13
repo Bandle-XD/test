@@ -607,6 +607,6 @@ if __name__ == '__main__':
     local_word_relate_parse('上海','入住体验','亚朵','all')
     # comment_cloud_parse(hotel_name='亚朵',location='上海',cloud_num=100,ranks=['all'])
     pass
-    a = '好：35/46.6%，不错：25/33.3%，很棒：6/8.0%，极佳：2/2.6%，超赞：1/1.3%，满意：1/1.3%，完美：1/1.3%'
-    b = '不好：2/2.6%，很差：1/1.3%，差：1/1.3%'
+    a = ''
+    b = ''
     ''

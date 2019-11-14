@@ -230,7 +230,6 @@ def crawl(driver,url):
         for i in range(int(pages_sum)-1):
 
             try:
-                driver.delete_all_cookies()
                 # 点击下一页
                 driver.execute_script("document.querySelector('a.c_down').click();")
                 # driver.execute_script("window.scrollTo(0,2500);")
@@ -341,4 +340,5 @@ if __name__ == '__main__':
 
     driver = init_crawl()
     # crawl(driver,'https://hotels.ctrip.com/hotel/4687218.html')   # 迪士尼乐园酒店
-    # crawl(driver,'https://hotels.ctrip.com/hotel/4687213.html')    # 迪士尼总动员酒店  1287 1319
+    # crawl(driver,'https://hotels.ctrip.com/hotel/4687213.html')    # 迪士尼总动员酒店
+    crawl(driver,'https://hotels.ctrip.com/hotel/17141864.html?isFull=F&masterhotelid=17141864&hcityid=2#ctm_ref=hod_sr_lst_dl_n_1_1')

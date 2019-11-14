@@ -8,6 +8,8 @@ word_relate_vision.py
 
 主要函数：
     词关联可视化函数：graph_vision()
+    条形图可视化函数：bar_vision()
+    条形图文本标签显示函数：autolabel()
 '''
 
 from pyecharts import options as opts
@@ -49,9 +51,9 @@ def graph_vision(location,keyword):
 分类关键词内部褒贬义词统计
 '''
 def bar_vision():
-    labels = ['位置','距离地铁站']
-    active_means = [91.3,77.0]
-    negative_means = [8.7,23.0]
+    labels = ['入住','入住服务','入住体验']
+    active_means = [100.0,100.0,94.7]
+    negative_means = [0.0,0.0,5.3]
 
     x = np.arange(len(labels))  # the label locations
     width = 0.35  # the width of the bars
@@ -61,7 +63,7 @@ def bar_vision():
     rects2 = ax.bar(x + width/2, negative_means, width, label='差评',color='darkcyan')
 
     # Add some text for labels, title and custom x-axis tick labels, etc.
-    ax.set_title('位置关联词占比统计')
+    ax.set_title('入住关联词占比统计')
     ax.set_xticks(x)
     ax.set_xticklabels(labels)
     ax.legend(loc='best')
@@ -74,6 +76,9 @@ def bar_vision():
     plt.show()
 
 
+'''
+条形图的文本标签显示函数
+'''
 def autolabel(rects,ax):
     """条形图的文本标签显示在上方"""
     for rect in rects:

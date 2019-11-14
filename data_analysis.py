@@ -25,6 +25,8 @@ data_analysis.py
         无价值词过滤函数：words_filter()
         词语关联解析函数：word_relate_parse()
         区域词关联函数：local_word_relate_parse()
+    * 差评率占比
+        区域差评率统计函数：local_negative_ratio_parse()
     
     评分分析模块：
     * 评分占比
@@ -50,6 +52,7 @@ import matplotlib
 import pygal
 import numpy as np
 import os
+from pprint import pprint
 
 
 # 连接数据库
@@ -467,6 +470,49 @@ def local_word_relate_parse(location,keyword,hotel,rank):
 
 
 
+
+'''
+*************评论分析-地区酒店差评率分析***************
+'''
+
+'''
+区域差评率统计函数：统计某个地区四分以下的评论数量占比
+'''
+def local_negative_ratio_parse(location,hotel_name):
+    # 酒店差评率列表
+    negative_comment_ratio = {}
+    if location == '上海':
+        if hotel_name == '亚朵':
+            # 读取所有酒店
+            sql = 'select hotel_name from hotel_list where hotel_name like "%%亚朵%%" or hotel_name like "%%drama%%"'
+            df_hotel_name = pd.read_sql_query(sql,engine)
+            for hotel in df_hotel_name.iloc[:,0]:
+                df = read_sql(hotel)
+                df_A,df_B,df_C = comment_rank(df)
+                len_A = len(df_A)
+                len_B = len(df_B)
+                len_C = len(df_C)
+                len_all = len_A + len_B + len_C
+                ratio = round((len_B + len_C)/len_all,3)
+                negative_comment_ratio[hotel] = ratio
+
+            # 排序
+            negative_comment_ratio = sorted(negative_comment_ratio.items(), key=lambda x:x[1], reverse=True)
+            pprint(negative_comment_ratio)
+        
+        else:
+            print('上海地区暂无该酒店')
+
+
+    else:
+        print('本地区暂无酒店')
+
+
+
+
+
+
+
 '''
 *************评分分析***************
 '''
@@ -604,9 +650,7 @@ def trip_type_vision(hotel_name):
 if __name__ == '__main__':
     # trip_type_vision('上海外滩亚朵轻居酒店')
     # comment_score_vision('上海外滩亚朵轻居酒店')
-    local_word_relate_parse('上海','入住体验','亚朵','all')
+    # local_word_relate_parse('上海','入住体验','亚朵','all')
     # comment_cloud_parse(hotel_name='亚朵',location='上海',cloud_num=100,ranks=['all'])
+    local_negative_ratio_parse('上海','亚朵')
     pass
-    a = ''
-    b = ''
-    ''

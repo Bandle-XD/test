@@ -42,70 +42,7 @@ from pyecharts.charts import Graph, Page
 
 
 
-def graph_base():
-
-    '''
-    前向关联词
-    '''
-    df = pd.read_csv('D:/Project/test/上海/服务/pre_keyword_count.csv',names=['keyword','count'])
-    keyword_list = df.keyword.values[:6]
-    nodes = []
-    for i in keyword_list:
-        nodes.append({'name':i,'symbolSize':30})
-
-    links = []
-    for i in keyword_list:
-        links.append({'source':i,'target':'服务'})
-
-
-    '''
-    后向关联词
-    '''
-    df = pd.read_csv('D:/Project/test/上海/服务/back_keyword_count.csv',names=['keyword','count'])
-    keyword_list = df.keyword.values[:6]
-    for i in keyword_list:
-        if i == '态度':
-            continue
-        nodes.append({'name':i,'symbolSize':30})
-
-    for i in keyword_list:
-        links.append({'source':'服务','target':i})
-
-
-
-    nodes.append({'name':'服务','symbolSize':50})
-    nodes.append({'name':'态度','symbolSize':50})
-
-    nodes.append({'name':'很好','symbolSize':30})
-    nodes.append({'name':'很差','symbolSize':30})
-    nodes.append({'name':'恶劣','symbolSize':30})
-    
-
-    links.append({'source':'态度','target':'很好'})
-    links.append({'source':'态度','target':'很差'})
-    links.append({'source':'态度','target':'恶劣'})
-
-    # pyecharts V1 版本开始支持链式调用
-    c = (
-        Graph()
-        .add(
-            "",
-            nodes,
-            links,
-            # label_opts=opts.LabelOpts(is_show=False),
-            repulsion=4000)
-        .set_global_opts(title_opts=opts.TitleOpts(title="服务前后向关联词分析"))
-    )
-    return c
-
-# graph_base().render('D:/a.html')
-
-a = [1,2,3]
-b = [5,6,7,8]
-c = []
-d = []
-for x,y in zip(a,b):
-    c.append(x)
-    d.append(y)
+c = 1
+d = 2
 
 print(c,d)

@@ -51,29 +51,31 @@ def graph_vision(location,keyword):
 分类关键词内部褒贬义词统计
 '''
 def bar_vision():
-    labels = ['入住','入住服务','入住体验']
-    active_means = [100.0,100.0,94.7]
+    labels = ['虹桥枢纽国展中心亚朵酒店','虹桥韩国街亚朵轻居酒店','虹桥国展蟠龙地铁站亚朵酒店','安亭亚朵酒店']
+    active_means = [2.4,2.4,1.5,0.0]
     negative_means = [0.0,0.0,5.3]
 
     x = np.arange(len(labels))  # the label locations
     width = 0.35  # the width of the bars
 
-    fig, ax = plt.subplots()
-    rects1 = ax.bar(x - width/2, active_means, width, label='好评',color='orange')
-    rects2 = ax.bar(x + width/2, negative_means, width, label='差评',color='darkcyan')
+    fig, ax = plt.subplots(figsize=(12,7))
+    rects1 = ax.bar(x, active_means, width, label='差评率',color='darkcyan')
+    # rects2 = ax.bar(x + width/2, negative_means, width, label='差评',color='darkcyan')
 
     # Add some text for labels, title and custom x-axis tick labels, etc.
-    ax.set_title('入住关联词占比统计')
+    ax.set_title('上海地区亚朵酒店差评率分析/%',fontsize=17)
     ax.set_xticks(x)
-    ax.set_xticklabels(labels)
-    ax.legend(loc='best')
+    ax.set_xticklabels(labels,fontsize=13)
+    ax.legend(loc='best',fontsize=17)
 
     autolabel(rects1,ax)
-    autolabel(rects2,ax)
+    # autolabel(rects2,ax)
 
     fig.tight_layout()
-    # plt.ylim([0,120])
-    plt.show()
+    plt.yticks(fontsize=14)
+    plt.ylim((0,7))
+    plt.savefig('./static/条形图/上海地区差评率分析_5.png')
+    # plt.show()
 
 
 '''
@@ -87,7 +89,7 @@ def autolabel(rects,ax):
                     xy=(rect.get_x() + rect.get_width() / 2, height),
                     xytext=(0, 3),  # 3 points vertical offset
                     textcoords="offset points",
-                    ha='center', va='bottom')
+                    ha='center', va='bottom',fontsize=13)
 
 
 

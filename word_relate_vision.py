@@ -13,7 +13,7 @@ word_relate_vision.py
 '''
 
 from pyecharts import options as opts
-from pyecharts.charts import Graph, Page
+from pyecharts.charts import Graph, Bar
 import pandas as pd
 import json
 import os
@@ -92,6 +92,21 @@ def autolabel(rects,ax):
                     ha='center', va='bottom',fontsize=13)
 
 
+'''
+pyecharts条形图
+'''
+def bar_vision_charts():
+    c = (
+        Bar()
+        .add_xaxis(['前台','早餐','房间'])
+        .add_yaxis("商家A", [3,6,8])
+        .add_yaxis("商家B", [7,2,6])
+        .set_global_opts(title_opts=opts.TitleOpts(title="Bar-基本示例", subtitle="我是副标题"))
+    )
+    return c
+
+
+
 
 if __name__ == '__main__':
     # graph_vision('上海','前台').render('D:/Project/test/static/前台.html')
@@ -101,6 +116,7 @@ if __name__ == '__main__':
     # graph_vision('上海','价格').render('D:/Project/test/static/价格.html')
     # graph_vision('上海','环境').render('D:/Project/test/static/环境.html')
     # graph_vision('上海','位置').render('D:/Project/test/static/位置.html')
-    graph_vision('上海','入住').render('D:/Project/test/static/入住.html')
+    # graph_vision('上海','入住').render('D:/Project/test/static/入住.html')
 
     # bar_vision()
+    bar_vision_charts().render('D:/Project/test/static/分类统计图.html')

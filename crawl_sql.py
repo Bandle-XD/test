@@ -79,15 +79,15 @@ def insert_info(hotel_name, comment_list, total_score_list, envir_score_list,
 '''
 def insert_hotel_list(hotel_name, hotel_score, comment_num, crawl_time, crawl_date):
     
-    # metadata = MetaData() # 定义元数据对象
-    # session = Session(engine) # session进行操作
+    metadata = MetaData() # 定义元数据对象
+    session = Session(engine) # session进行操作
 
-    # # 获取hotel_list表对象
-    # Hotel = Table('hotel_list',metadata,autoload=True,autoload_with=engine)
+    # 获取hotel_list表对象
+    Hotel = Table('hotel_list',metadata,autoload=True,autoload_with=engine)
 
-    # # 判断酒店之前是否有爬取记录，返回True或False，有则删除
-    # if session.query(exists().where(Hotel.c.hotel_name == hotel_name)).scalar():
-    #     session.delete(session.query(Hotel).filter(Hotel.c.hotel_name == hotel_name).all())
+    # 判断酒店之前是否有爬取记录，返回True或False，有则删除
+    if session.query(exists().where(Hotel.c.hotel_name == hotel_name)).scalar():
+        session.delete(session.query(Hotel).filter(Hotel.c.hotel_name == hotel_name).all())
 
     # 新建pandas中的DataFrame类型，准备写入mysql
     df = pd.DataFrame({'hotel_name':[hotel_name],'hotel_score':[hotel_score],'comment_num':[comment_num],

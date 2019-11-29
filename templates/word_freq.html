@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>鹿马智能酒店信息分析系统</title>
+    <style>
+        div.head{
+            height: 70px;
+            text-align: center;
+        }
+        span.title{
+            font-size: 32px;
+            font-weight: bold;
+        }
+        hr{
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div style="height: 40px"></div>
+    <div class="head">
+        <span class="title">鹿马智能酒店信息分析系统</span>
+        <hr>
+    </div>
+    <p>
+        词频统计模块分为两个功能：
+    </p>
+    <p>
+        区域酒店分析和单个酒店分析。
+    </p>
+    <p>
+        例如：分析上海地区亚朵酒店，区域输入"上海"，酒店别称输入"亚朵"。
+    </p>
+    <p>
+        例如：分析单个酒店，如上海外滩亚朵轻居酒店，区域不用输入内容，酒店名称输入"上海外滩亚朵轻居酒店"。
+    </p>
+    <p>
+        词云数量为词云图里的词语数量
+    </p>
+    <form action="#" method="POST">
+        <div>
+            <span>区域</span>
+            <input type="text" name="location">
+        </div>
+        <div>
+            <span>酒店名称(区域分析请输入别称)</span>
+            <input type="text" name="hotel_name">
+        </div>
+        <div>
+            <span>词云数量</span>
+            <input type="text" name="cloud_num">
+        </div>
+        <div>
+            <button type="submit">提交</button>
+        </div>
+    </form>
+</body>
+</html>

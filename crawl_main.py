@@ -292,8 +292,8 @@ def crawl(driver,url):
 
             except TimeoutException:
                 print('超时')
-                print(current_page)
-                print(driver.find_element_by_xpath('//a[@class="current"]').text)
+                print('current_page:',current_page)
+                print('//a[@class="current"]:',driver.find_element_by_xpath('//a[@class="current"]').text)
                 # continue
 
             except Exception as e:
@@ -341,4 +341,4 @@ if __name__ == '__main__':
     driver = init_crawl()
     # crawl(driver,'https://hotels.ctrip.com/hotel/4687218.html')   # 迪士尼乐园酒店
     # crawl(driver,'https://hotels.ctrip.com/hotel/4687213.html')    # 迪士尼总动员酒店
-    crawl(driver,'https://hotels.ctrip.com/hotel/17141864.html?isFull=F&masterhotelid=17141864&hcityid=2#ctm_ref=hod_sr_lst_dl_n_1_1')
+    crawl(driver,'https://hotels.ctrip.com/hotel/369700.html#ctm_ref=www_hp_bs_lst')

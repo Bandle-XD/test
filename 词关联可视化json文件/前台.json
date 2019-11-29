@@ -174,6 +174,111 @@
             "draggable": "False",
             "value":0,
             "category": "active"
+        },
+        {
+            "name":"热情：232/54.6%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"主动：41/9.6%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"贴心：34/8.0%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"好：33/7.8%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"热情服务：19/4.5%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"热心：15/3.5%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"nice：14/3.3%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"客气：12/2.8%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"礼貌：11/2.6%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"耐心：7/1.6%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "active"
+        },
+        {
+            "name":"态度强硬：2/0.5%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"搞错：2/0.5%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"没人：1/0.2%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"糊涂：1/0.2%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
+        },
+        {
+            "name":"傲慢：1/0.2%",
+            "symbolSize":30,
+            "draggable": "False",
+            "value":0,
+            "category": "negative"
         }
     ],
     [
@@ -188,6 +293,66 @@
         {
             "source":"前台",
             "target":"态度"
+        },
+        {
+            "source":"前台",
+            "target":"热情：232/54.6%"
+        },
+        {
+            "source":"前台",
+            "target":"主动：41/9.6%"
+        },
+        {
+            "source":"前台",
+            "target":"贴心：34/8.0%"
+        },
+        {
+            "source":"前台",
+            "target":"好：33/7.8%"
+        },
+        {
+            "source":"前台",
+            "target":"热情服务：19/4.5%"
+        },
+        {
+            "source":"前台",
+            "target":"热心：15/3.5%"
+        },
+        {
+            "source":"前台",
+            "target":"nice：14/3.3%"
+        },
+        {
+            "source":"前台",
+            "target":"客气：12/2.8%"
+        },
+        {
+            "source":"前台",
+            "target":"礼貌：11/2.6%"
+        },
+        {
+            "source":"前台",
+            "target":"耐心：7/1.6%"
+        },
+        {
+            "source":"前台",
+            "target":"态度强硬：2/0.5%"
+        },
+        {
+            "source":"前台",
+            "target":"搞错：2/0.5%"
+        },
+        {
+            "source":"前台",
+            "target":"没人：1/0.2%"
+        },
+        {
+            "source":"前台",
+            "target":"糊涂：1/0.2%"
+        },
+        {
+            "source":"前台",
+            "target":"傲慢：1/0.2%"
         },
         {
             "source":"服务",

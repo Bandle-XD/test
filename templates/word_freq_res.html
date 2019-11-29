@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>鹿马智能酒店信息分析系统</title>
+    <style>
+        div.head{
+            height: 70px;
+            text-align: center;
+        }
+        span.title{
+            font-size: 32px;
+            font-weight: bold;
+        }
+        hr{
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div style="height: 40px"></div>
+    <div class="head">
+        <span class="title">鹿马智能酒店信息分析系统</span>
+        <hr>
+    </div>
+    <div>
+        <h3>{{ locals.location }}地区{{ locals.hotel_name }}词频统计</h3>
+    </div>
+    {% for src in locals.src%}
+    <div>
+        <img src={{src}} width="700px" height="400px">
+    </div>
+    {% endfor %}
+</body>
+</html>

@@ -10,10 +10,12 @@ word_relate_vision.py
     词关联可视化函数：graph_vision()
     条形图可视化函数：bar_vision()
     条形图文本标签显示函数：autolabel()
+    pyecharts条形图显示函数：bar_vision_charts()
+    pyecharts饼图显示函数：pie_vision_charts()
 '''
 
 from pyecharts import options as opts
-from pyecharts.charts import Graph, Bar
+from pyecharts.charts import Graph, Bar, Pie
 import pandas as pd
 import json
 import os
@@ -29,7 +31,7 @@ plt.rcParams['font.sans-serif']=['SimHei']#设置字体以便支持中文
 '''
 def graph_vision(location,keyword):
 
-    with open(f'D:/Project/test/词关联可视化json文件/{keyword}.json','r',encoding='utf-8') as f:
+    with open(f'./词关联可视化json文件/{keyword}.json','r',encoding='utf-8') as f:
         j = json.load(f)
         nodes, links, categories = j
 
@@ -51,30 +53,29 @@ def graph_vision(location,keyword):
 分类关键词内部褒贬义词统计
 '''
 def bar_vision():
-    labels = ['虹桥枢纽国展中心亚朵酒店','虹桥韩国街亚朵轻居酒店','虹桥国展蟠龙地铁站亚朵酒店','安亭亚朵酒店']
-    active_means = [2.4,2.4,1.5,0.0]
-    negative_means = [0.0,0.0,5.3]
+    labels = ['前台','前台服务','前台态度','前台服务员']
+    active_means = [98.4,97.5,99.2,100.0]
+    negative_means = [1.6,2.5,0.8,0.0]
 
     x = np.arange(len(labels))  # the label locations
     width = 0.35  # the width of the bars
 
     fig, ax = plt.subplots(figsize=(12,7))
-    rects1 = ax.bar(x, active_means, width, label='差评率',color='darkcyan')
-    # rects2 = ax.bar(x + width/2, negative_means, width, label='差评',color='darkcyan')
+    rects1 = ax.bar(x - width/2, active_means, width, label='好评率',color='orange')
+    rects2 = ax.bar(x + width/2, negative_means, width, label='差评率',color='darkcyan')
 
     # Add some text for labels, title and custom x-axis tick labels, etc.
-    ax.set_title('上海地区亚朵酒店差评率分析/%',fontsize=17)
+    ax.set_title('前台关联词占比统计/%',fontsize=17)
     ax.set_xticks(x)
     ax.set_xticklabels(labels,fontsize=13)
     ax.legend(loc='best',fontsize=17)
 
     autolabel(rects1,ax)
-    # autolabel(rects2,ax)
+    autolabel(rects2,ax)
 
     fig.tight_layout()
     plt.yticks(fontsize=14)
-    plt.ylim((0,7))
-    plt.savefig('./static/条形图/上海地区差评率分析_5.png')
+    plt.savefig('./static/条形图/前台.png')
     # plt.show()
 
 
@@ -93,30 +94,49 @@ def autolabel(rects,ax):
 
 
 '''
-pyecharts条形图
+pyecharts条形图显示函数
 '''
 def bar_vision_charts():
     c = (
         Bar()
-        .add_xaxis(['前台','早餐','房间'])
-        .add_yaxis("商家A", [3,6,8])
-        .add_yaxis("商家B", [7,2,6])
-        .set_global_opts(title_opts=opts.TitleOpts(title="Bar-基本示例", subtitle="我是副标题"))
+        .add_xaxis(['环境','前台','设施','早餐','入住','房间','位置','价格'])
+        .add_yaxis("好评率", [98.988,98.848,98.792,98.259,98.238,94.863,90.229,87.248])
+        .add_yaxis("差评率", [1.012,1.152,1.208,1.741,1.762,5.137,9.771,12.752])
     )
     return c
 
 
+'''
+pyecharts饼图显示函数
+'''
+def pie_vision_charts(values=None,labels=None):
+    c = (
+        Pie()
+        .add(
+            "",
+            [list(z) for z in zip(labels,values)],
+            radius=["30%", "75%"],
+            center=["45%", "50%"],
+            label_opts=opts.LabelOpts(is_show=True),
+        )
+        .set_series_opts(label_opts=opts.LabelOpts(formatter="{b}: {c}"))
+    )
+    return c
 
 
 if __name__ == '__main__':
-    # graph_vision('上海','前台').render('D:/Project/test/static/前台.html')
-    # graph_vision('上海','早餐').render('D:/Project/test/static/早餐.html')
-    # graph_vision('上海','房间').render('D:/Project/test/static/房间.html')
-    # graph_vision('上海','设施').render('D:/Project/test/static/设施.html')
-    # graph_vision('上海','价格').render('D:/Project/test/static/价格.html')
-    # graph_vision('上海','环境').render('D:/Project/test/static/环境.html')
-    # graph_vision('上海','位置').render('D:/Project/test/static/位置.html')
-    # graph_vision('上海','入住').render('D:/Project/test/static/入住.html')
+    # graph_vision('上海','前台').render('./static/前台.html')
+    # graph_vision('上海','早餐').render('./static/早餐.html')
+    # graph_vision('上海','房间').render('./static/房间.html')
+    # graph_vision('上海','设施').render('./static/设施.html')
+    # graph_vision('上海','价格').render('./static/价格.html')
+    # graph_vision('上海','环境').render('./static/环境.html')
+    # graph_vision('上海','位置').render('./static/位置.html')
+    # graph_vision('上海','入住').render('./static/入住.html')
 
     # bar_vision()
-    bar_vision_charts().render('D:/Project/test/static/分类统计图.html')
+    # bar_vision_charts().render('./static/分类统计图.html')
+    # pie_vision_charts().render('./static/饼图统计图.html')
+
+    graph_vision()
+

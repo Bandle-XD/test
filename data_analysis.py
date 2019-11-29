@@ -54,6 +54,9 @@ import numpy as np
 import os
 from pprint import pprint
 
+# 本地函数
+from word_relate_vision import pie_vision_charts
+
 
 # 连接数据库
 engine = create_engine("mysql+pymysql://root:123456@localhost:3306/hotel_info",encoding="utf-8")
@@ -166,7 +169,7 @@ def fenci(hotel_name):
 '''
 def drop_stopwords(comment_S):
     # 读取停用词表
-    stopwords=pd.read_csv("D:/Project/test/stopwords.txt",index_col=False,sep="\t",quoting=3,names=['stopword'], encoding='utf-8')
+    stopwords=pd.read_csv("./stopwords.txt",index_col=False,sep="\t",quoting=3,names=['stopword'], encoding='utf-8')
 
     # 停用词转换为列表
     stopwords = stopwords.stopword.values.tolist()
@@ -231,16 +234,42 @@ def wordcloud_gen(words_count,cloud_num):
 '''
 评论词云可视化函数：从分词列表里生成词云图，返回去停用词，统计词频后的words_count
 '''
-def comment_cloud_vision(rank,comment_S,cloud_num=10):
+def comment_cloud_vision(hotel_name,rank,comment_S,cloud_num=10,location=None):
 
     all_words = drop_stopwords(comment_S)
     words_count = words_freq(all_words)
     word_cloud = wordcloud_gen(words_count,cloud_num)
     plt.imshow(word_cloud)
     plt.axis('off') # 去掉坐标轴
-    plt.savefig(f'D:/Project/test/static/{rank}.png',quality=95)
 
-    return words_count
+    # 保存图片
+    if location:
+        # 自动创建路径
+        if os.path.exists(f'./static/词频分析/{location}'):
+            pass
+        else:
+            os.mkdir(f'./static/词频分析/{location}')
+
+        if os.path.exists(f'./static/词频分析/{location}/{hotel_name}'):
+            pass
+        else:
+            os.mkdir(f'./static/词频分析/{location}/{hotel_name}')
+        
+        # 图片路径
+        img_src = f'/static/词频分析/{location}/{hotel_name}/{rank}.png'
+
+    else:
+        # 自动创建路径
+        if os.path.exists(f'./static/词频分析/{hotel_name}'):
+            pass
+        else:
+            os.mkdir(f'./static/词频分析/{hotel_name}')
+        
+        # 图片路径
+        img_src = f'/static/词频分析/{hotel_name}/{rank}.png'
+    plt.savefig('.' + img_src, quality=95)
+    
+    return words_count, img_src
 
 
 '''
@@ -258,8 +287,8 @@ def comment_cloud_parse(hotel_name=None,cloud_num=10,ranks=[],location=None,freq
             comment_S_B_local = []
             comment_S_C_local = []
 
-            for hotel_name in df_hotel_name.iloc[:,0]:
-                comment_S_A,comment_S_B,comment_S_C = fenci(hotel_name)
+            for hotel in df_hotel_name.iloc[:,0]:
+                comment_S_A,comment_S_B,comment_S_C = fenci(hotel)
                 for seg_A in comment_S_A:
                     comment_S_A_local.append(seg_A)
                 for seg_B in comment_S_B:
@@ -267,22 +296,28 @@ def comment_cloud_parse(hotel_name=None,cloud_num=10,ranks=[],location=None,freq
                 for seg_C in comment_S_C:
                     comment_S_C_local.append(seg_C)
 
-            # 判断需要可视化哪些等级的评论       
+            # 所有生成词云图的路径，返回前端
+            img_src_all = []
+
+            # 判断需要可视化哪些等级的评论
             for i in ranks:
                 if i == 'A':
-                    words_count = comment_cloud_vision('A',comment_S_A_local,cloud_num)
-                    print(f'{location}区域好评量：'+read_length(comment_S_A_local))
-                    read_head(words_count,num=freq_num)
+                    words_count, img_src = comment_cloud_vision(hotel_name,'A',comment_S_A_local,cloud_num,location=location)
+                    # print(f'{location}区域好评量：'+read_length(comment_S_A_local))
+                    # read_head(words_count,num=freq_num)
+                    img_src_all.append(img_src)
 
                 elif i == 'B':
-                    words_count = comment_cloud_vision('B',comment_S_B_local,cloud_num)
-                    print(f'{location}区域中评量：'+read_length(comment_S_B_local))
-                    read_head(words_count,num=freq_num)
+                    words_count, img_src = comment_cloud_vision(hotel_name,'B',comment_S_B_local,cloud_num,location=location)
+                    # print(f'{location}区域中评量：'+read_length(comment_S_B_local))
+                    # read_head(words_count,num=freq_num)
+                    img_src_all.append(img_src)
 
                 elif i == 'C':
-                    words_count = comment_cloud_vision('C',comment_S_C_local,cloud_num)
-                    print(f'{location}区域差评量：'+read_length(comment_S_C_local))
-                    read_head(words_count,num=freq_num)
+                    words_count, img_src = comment_cloud_vision(hotel_name,'C',comment_S_C_local,cloud_num,location=location)
+                    # print(f'{location}区域差评量：'+read_length(comment_S_C_local))
+                    # read_head(words_count,num=freq_num)
+                    img_src_all.append(img_src)
 
                 elif i == 'all':
                     # 全部评论
@@ -292,12 +327,15 @@ def comment_cloud_parse(hotel_name=None,cloud_num=10,ranks=[],location=None,freq
                         for comm in comm_temp:
                             comment_S_all.append(comm)
 
-                    words_count = comment_cloud_vision('all',comment_S_all,cloud_num)
-                    print(f'{location}区域总评量：'+read_length(comment_S_all))
-                    read_head(words_count,num=freq_num)
+                    words_count, img_src = comment_cloud_vision(hotel_name,'all',comment_S_all,cloud_num,location=location)
+                    # print(f'{location}区域总评量：'+read_length(comment_S_all))
+                    # read_head(words_count,num=freq_num)
+                    img_src_all.append(img_src)
+
+            return img_src_all
 
         else:
-            print('本地区该酒店暂无解析')
+            return '本地区该酒店暂无解析'
     
     else: # 单个酒店词云分析
         comment_S_A,comment_S_B,comment_S_C = fenci(hotel_name)
@@ -305,20 +343,23 @@ def comment_cloud_parse(hotel_name=None,cloud_num=10,ranks=[],location=None,freq
         # 判断需要可视化哪些等级的评论
         for i in ranks:
             if i == 'A':
-                words_count = comment_cloud_vision('A',comment_S_A,cloud_num)
-                print(f'{hotel_name}好评量：'+read_length(comment_S_A))
-                read_head(words_count,num=freq_num)
+                words_count, img_src = comment_cloud_vision(hotel_name,'A',comment_S_A,cloud_num)
+                # print(f'{hotel_name}好评量：'+read_length(comment_S_A))
+                # read_head(words_count,num=freq_num)
+                img_src_all.append(img_src)
                 
 
             elif i == 'B':
-                words_count = comment_cloud_vision('B',comment_S_B,cloud_num)
-                print(f'{hotel_name}中评量：'+read_length(comment_S_B))
-                read_head(words_count,num=freq_num)
+                words_count, img_src = comment_cloud_vision(hotel_name,'B',comment_S_B,cloud_num)
+                # print(f'{hotel_name}中评量：'+read_length(comment_S_B))
+                # read_head(words_count,num=freq_num)
+                img_src_all.append(img_src)
 
             elif i == 'C':
-                words_count = comment_cloud_vision('C',comment_S_C,cloud_num)
-                print(f'{hotel_name}差评量：'+read_length(comment_S_C))
-                read_head(words_count,num=freq_num)
+                words_count, img_src = comment_cloud_vision(hotel_name,'C',comment_S_C,cloud_num)
+                # print(f'{hotel_name}差评量：'+read_length(comment_S_C))
+                # read_head(words_count,num=freq_num)
+                img_src_all.append(img_src)
 
             elif i == 'all':
                 # 全部评论
@@ -328,11 +369,12 @@ def comment_cloud_parse(hotel_name=None,cloud_num=10,ranks=[],location=None,freq
                     for comm in comm_temp:
                         comment_S_all.append(comm)
 
-                words_count = comment_cloud_vision('all',comment_S_all,cloud_num)
-                print(f'{hotel_name}总评量：'+read_length(comment_S_all))
-                read_head(words_count,num=freq_num)
-
-    return None
+                words_count, img_src = comment_cloud_vision(hotel_name,'all',comment_S_all,cloud_num)
+                # print(f'{hotel_name}总评量：'+read_length(comment_S_all))
+                # read_head(words_count,num=freq_num)
+                img_src_all.append(img_src)
+        
+        return img_src_all
 
 
 
@@ -395,7 +437,7 @@ def words_filter(keyword_count,keyword,direct):
 
 
 '''
-词关联解析函数：读取，分词，去停用词，关联，统计前向关联词，过滤前向无价值词，后向词列表直接返回
+词关联解析函数：读取，分词，去停用词，关联，统计前向关联词，后向词列表直接返回
 '''
 def word_relate_parse(hotel_name,keyword,rank):
 
@@ -427,45 +469,72 @@ def word_relate_parse(hotel_name,keyword,rank):
 '''
 区域词关联函数：统计某个区域酒店的高频前向关联词和所有的后向关联词
 '''
-def local_word_relate_parse(location,keyword,hotel,rank):
-    # 读取所有的酒店
-    if hotel == '亚朵':
-        sql = 'select hotel_name from hotel_list where hotel_name like "%%亚朵%%" or hotel_name like "%%drama%%"'
+def local_word_relate_parse(keyword,hotel,rank,location=None):
+    if location:
+        # 区域统计
+        if location == '上海':
+            if hotel == '亚朵':
+                sql = 'select hotel_name from hotel_list where hotel_name like "%%亚朵%%" or hotel_name like "%%drama%%"'
+                df_hotel_name = pd.read_sql_query(sql,engine)
 
-    else:
-        print('该地区无该酒店')
-        return None
-
-    df_hotel_name = pd.read_sql_query(sql,engine)
-
-    # 创建空的前向关联词DataFrame，后续直接append
-    pre_keyword = pd.DataFrame({'all_words':[]})
-    back_keyword = []
+                # 创建空的前向关联词DataFrame，后续直接append
+                pre_keyword = pd.DataFrame({'all_words':[]})
+                back_keyword = []
 
 
-    # 所有酒店的统计，每个酒店取前十个前向高频词和所有的后向关联词
-    for hotel in df_hotel_name.iloc[:,0]:
+                # 所有酒店的统计，每个酒店取前十个前向高频词和所有的后向关联词
+                for hotel in df_hotel_name.iloc[:,0]:
+                    keyword_count = word_relate_parse(hotel,keyword,rank)
+                    pre_keyword = pre_keyword.append(keyword_count[0].iloc[:10],sort=False)
+                    for word in keyword_count[1]:
+                        back_keyword.append(word)
+                
+                back_keyword = pd.DataFrame({'all_words':back_keyword})
+                # 转换为列表传入words_freq()
+                pre_keyword_count = words_freq(pre_keyword.all_words.values.tolist())
+                back_keyword_count = words_freq(back_keyword.all_words.values.tolist())
+
+                # 检查文件夹是否存在，不存在则创建
+                if os.path.exists(f'./关联词/{location}/{hotel}/{keyword}'):
+                    pass
+                else:
+                    os.mkdir(f'./关联词/{location}/{hotel}/{keyword}')
+
+                # 存储数据
+                pre_keyword_count.iloc[:20].to_csv(f'./关联词/{location}/{hotel}/{keyword}/pre_keyword_count.csv',index=False,header=False)
+                back_keyword_count.to_csv(f'./关联词/{location}/{hotel}/{keyword}/back_keyword_count.csv',index=False,header=False)
+
+                return None
+
+        else:
+            print('该地区暂无酒店信息')
+            return None
+    else: 
+        # 单酒店统计
+        pre_keyword = pd.DataFrame({'all_words':[]})
+        back_keyword = []
+
         keyword_count = word_relate_parse(hotel,keyword,rank)
         pre_keyword = pre_keyword.append(keyword_count[0].iloc[:10],sort=False)
         for word in keyword_count[1]:
             back_keyword.append(word)
-    
-    back_keyword = pd.DataFrame({'all_words':back_keyword})
-    # 转换为列表传入words_freq()
-    pre_keyword_count = words_freq(pre_keyword.all_words.values.tolist())
-    back_keyword_count = words_freq(back_keyword.all_words.values.tolist())
 
-    # 检查文件夹是否存在，不存在则创建
-    if os.path.exists(f'D:/Project/test/关联词/{location}/{keyword}'):
-        pass
-    else:
-        os.mkdir(f'D:/Project/test/关联词/{location}/{keyword}')
+        back_keyword = pd.DataFrame({'all_words':back_keyword})
+        # 转换为列表传入words_freq()
+        pre_keyword_count = words_freq(pre_keyword.all_words.values.tolist())
+        back_keyword_count = words_freq(back_keyword.all_words.values.tolist())
 
-    # 存储数据
-    pre_keyword_count.iloc[:20].to_csv(f'D:/Project/test/关联词/{location}/{keyword}/pre_keyword_count.csv',index=False,header=False)
-    back_keyword_count.to_csv(f'D:/Project/test/关联词/{location}/{keyword}/back_keyword_count.csv',index=False,header=False)
+        # 检查文件夹是否存在，不存在则创建
+        if os.path.exists(f'./关联词/{hotel}/{keyword}'):
+            pass
+        else:
+            os.mkdir(f'./关联词/{hotel}/{keyword}')
 
-    return None
+        # 存储数据
+        pre_keyword_count.iloc[:20].to_csv(f'./关联词/{hotel}/{keyword}/pre_keyword_count.csv',index=False,header=False)
+        back_keyword_count.to_csv(f'./关联词/{hotel}/{keyword}/back_keyword_count.csv',index=False,header=False)
+
+        return None
 
 
 
@@ -590,9 +659,9 @@ def comment_score_vision(hotel_name):
 
 '''
 出行类型百分比计算函数
-出行类型：家庭亲子、情侣出游、商务出差、朋友出游、独自旅行、代人预订、其他
+出行类型：家庭亲子、情侣出游、朋友出游、商务出差、独自旅行、代人预订、其它
 '''
-def trip_type_percent_parse(df_hotel):
+def trip_type_percent_parse(df_hotel,percent=True):
     
     df_fam = df_hotel[df_hotel['trip_type'] == '家庭亲子']
     df_coup = df_hotel[df_hotel['trip_type'] == '情侣出游']
@@ -600,7 +669,7 @@ def trip_type_percent_parse(df_hotel):
     df_bus = df_hotel[df_hotel['trip_type'] == '商务出差']
     df_own = df_hotel[df_hotel['trip_type'] == '独自旅行']
     df_rep = df_hotel[df_hotel['trip_type'] == '代人预订']
-    df_else = df_hotel[df_hotel['trip_type'] == '其他']
+    df_else = df_hotel[df_hotel['trip_type'] == '其它']
 
     # 统计数量
     count_fam = df_fam.count()['trip_type']
@@ -611,39 +680,61 @@ def trip_type_percent_parse(df_hotel):
     count_rep = df_rep.count()['trip_type']
     count_else = df_else.count()['trip_type']
 
-    # 百分比
-    count_sum = count_fam + count_coup + count_fri + count_bus + count_own + count_rep + count_else
-    per_fam = round(count_fam / count_sum,3) * 100
-    per_coup = round(count_coup / count_sum,3) * 100
-    per_fri = round(count_fri / count_sum,3) * 100
-    per_bus = round(count_bus / count_sum,3) * 100
-    per_own = round(count_own / count_sum,3) * 100
-    per_rep = round(count_rep / count_sum,3) * 100
-    per_else = round(count_else / count_sum,3) * 100
+    if percent:
+        # 百分比
+        count_sum = count_fam + count_coup + count_fri + count_bus + count_own + count_rep + count_else
+        per_fam = round(count_fam / count_sum * 100,2)
+        per_coup = round(count_coup / count_sum* 100,2)
+        per_fri = round(count_fri / count_sum * 100,2)
+        per_bus = round(count_bus / count_sum * 100,2)
+        per_own = round(count_own / count_sum * 100,2)
+        per_rep = round(count_rep / count_sum * 100,2)
+        per_else = round(count_else / count_sum * 100,2)
 
-    return [per_fam,per_coup,per_fri,per_bus,per_own,per_rep,per_else]
+        return [per_fam,per_coup,per_fri,per_bus,per_own,per_rep,per_else]
 
+    else:
+        # 数量
+        return [count_fam,count_coup,count_fri,count_bus,count_own,count_rep,count_else]
 
 '''
-出行类型可视化函数：绘制占比圈饼图
+出行类型可视化函数：绘制占比饼图
 '''
-def trip_type_vision(hotel_name):
-    df_hotel = read_sql(hotel_name)
+def trip_type_vision(location=None,hotel_name=None):
+    if location == '上海':
+        if hotel_name == '亚朵':
+            # 所有酒店
+            count = [0 for i in range(7)]
+            sql = 'select hotel_name from hotel_list where hotel_name like "%%亚朵%%" or hotel_name like "%%drama%%"'
+            df_hotel_name = pd.read_sql_query(sql,engine)
+            for hotel in df_hotel_name.iloc[:,0]:
+                df_hotel = read_sql(hotel)
+                trip_count = trip_type_percent_parse(df_hotel,percent=False)
+                for i in range(len(count)):
+                    count[i] += trip_count[i]
 
-    # 计算出行类型百分比
-    trip_per = trip_type_percent_parse(df_hotel)
+            count_sum = sum(count)
+            trip_per = [round(count[i]/count_sum * 100,2) for i in range(len(count))]
+            labels = ['家庭亲子','情侣出游','朋友出游','商务出差','独自旅行','代人预订','其它']
+            c = pie_vision_charts(values=trip_per,labels=labels)
+            c.render('./static/出行类型统计图.html')
 
-    # pygal模块绘制圈饼图
-    pie_chart = pygal.Pie(inner_radius=.4)
-    pie_chart.title = f'{hotel_name}出行类型 (in %)'
-    pie_chart.add('家庭亲子', trip_per[0])
-    pie_chart.add('情侣出游', trip_per[1])
-    pie_chart.add('朋友出游', trip_per[2])
-    pie_chart.add('商务出差', trip_per[3])
-    pie_chart.add('独自旅行', trip_per[4])
-    pie_chart.add('代人预订', trip_per[5])
-    pie_chart.add('其他', trip_per[6])
-    pie_chart.render_to_file('D:/bar_chart.svg')
+            return None
+    
+        else:
+            # 单个酒店
+            df_hotel = read_sql(hotel_name)
+
+            # 计算出行类型百分比
+            trip_per = trip_type_percent_parse(df_hotel)
+            pie_vision_charts(values=trip_per,labels=['家庭亲子','情侣出游','朋友出游','商务出差','独自旅行','代人预订','其它'])
+
+            return None
+
+    else:
+        print('该地区暂无酒店')
+
+        return None
 
 
 
@@ -652,5 +743,8 @@ if __name__ == '__main__':
     # comment_score_vision('上海外滩亚朵轻居酒店')
     # local_word_relate_parse('上海','入住体验','亚朵','all')
     # comment_cloud_parse(hotel_name='亚朵',location='上海',cloud_num=100,ranks=['all'])
-    local_negative_ratio_parse('上海','亚朵')
+    # local_negative_ratio_parse('上海','亚朵')
+    # trip_type_vision('上海','亚朵')
+    # comment_cloud_parse(hotel_name='北京丽晶酒店',cloud_num=80,ranks=['A','B','C','all'])
+    # local_word_relate_parse('故宫','北京丽晶酒店','all')
     pass
